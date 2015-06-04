@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faithlife.PortableContrib", "src\Faithlife.PortableContrib\Faithlife.PortableContrib.csproj", "{FBDBFD6F-34B3-422D-A92E-B05D55B75351}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faithlife.PortableContrib-Net45", "src\Faithlife.PortableContrib\Faithlife.PortableContrib-Net45.csproj", "{35E57AD2-78A2-4092-82F8-5D2860B064CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FBDBFD6F-34B3-422D-A92E-B05D55B75351}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBDBFD6F-34B3-422D-A92E-B05D55B75351}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBDBFD6F-34B3-422D-A92E-B05D55B75351}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBDBFD6F-34B3-422D-A92E-B05D55B75351}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35E57AD2-78A2-4092-82F8-5D2860B064CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35E57AD2-78A2-4092-82F8-5D2860B064CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35E57AD2-78A2-4092-82F8-5D2860B064CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35E57AD2-78A2-4092-82F8-5D2860B064CD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
