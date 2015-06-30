@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Faithlife.PortableContrib</id>
+    <version>$version$</version>
+    <authors>Faithlife Corporation</authors>
+    <owners>Faithlife Corporation</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Adapters and implementations of common types not otherwise available to Portable Class Libraries.</description>
+    <copyright>Copyright 2015 Faithlife Corporation</copyright>
+    <dependencies>
+    </dependencies>
+  </metadata>
+  <files>   
+    <file src="src\Faithlife.PortableContrib\bin\Portable\$configuration$\Faithlife.PortableContrib.*" target="lib\portable-net45+netcore45+wpa81\" />
+    <file src="src\Faithlife.PortableContrib\bin\Net45\$configuration$\Faithlife.PortableContrib.*" target="lib\net45\" />
+    <file src="src\Faithlife.PortableContrib\bin\MonoAndroid\$configuration$\Faithlife.PortableContrib.*" target="lib\monoandroid\" exclude="**\*.mdb" />
+    <file src="src\Faithlife.PortableContrib\bin\Xamarin.iOS\$configuration$\Faithlife.PortableContrib.*" target="lib\xamarinios\" exclude="**\*.mdb" />
+  </files>
+</package>
