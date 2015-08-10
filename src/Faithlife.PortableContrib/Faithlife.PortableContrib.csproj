@@ -74,8 +74,6 @@
     <Compile Include="Security\Cryptography\Adaptation\IDeriveBytes.cs" />
     <Compile Include="Security\Cryptography\Adaptation\IHashAlgorithm.cs" />
     <Compile Include="Security\Cryptography\Adaptation\IKeyedHashAlgorithm.cs" />
-    <Compile Include="Security\Cryptography\Adaptation\IProtectedData.cs" />
-    <Compile Include="Security\Cryptography\Adaptation\IProtectedDataFactory.cs" />
     <Compile Include="Security\Cryptography\Adaptation\ISymmetricAlgorithm.cs" />
     <Compile Include="Security\Cryptography\AesManaged.cs" />
     <Compile Include="Security\Cryptography\CryptographicException.cs" />
@@ -86,7 +84,6 @@
     <Compile Include="Security\Cryptography\ICryptoTransform.cs" />
     <Compile Include="Security\Cryptography\KeyedHashAlgorithm.cs" />
     <Compile Include="Security\Cryptography\MD5.cs" />
-    <Compile Include="Security\Cryptography\ProtectedData.cs" />
     <Compile Include="Security\Cryptography\Rfc2898DeriveBytes.cs" />
     <Compile Include="Security\Cryptography\SHA1.cs" />
     <Compile Include="Security\Cryptography\SHA256Managed.cs" />
