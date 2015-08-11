@@ -89,6 +89,7 @@
     <Compile Include="Security\Cryptography\SHA256Managed.cs" />
     <Compile Include="Security\Cryptography\SymmetricAlgorithm.cs" />
     <Compile Include="SerializableAttribute.cs" />
+    <Compile Include="Threading\Timer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
