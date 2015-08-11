@@ -34,6 +34,7 @@
 [assembly: TypeForwardedTo(typeof(System.Data.Common.DbParameterCollection))]
 [assembly: TypeForwardedTo(typeof(System.Data.Common.DbProviderFactory))]
 [assembly: TypeForwardedTo(typeof(System.Data.Common.DbTransaction))]
+[assembly: TypeForwardedTo(typeof(System.Globalization.SortKey))]
 [assembly: TypeForwardedTo(typeof(System.Security.Cryptography.AesManaged))]
 [assembly: TypeForwardedTo(typeof(System.Security.Cryptography.CryptographicException))]
 [assembly: TypeForwardedTo(typeof(System.Security.Cryptography.DeriveBytes))]

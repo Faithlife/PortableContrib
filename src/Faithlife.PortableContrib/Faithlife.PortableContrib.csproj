@@ -69,6 +69,8 @@
     <Compile Include="Data\StateChangeEventArgs.cs" />
     <Compile Include="Data\UpdateRowSource.cs" />
     <Compile Include="DBNull.cs" />
+    <Compile Include="Globalization\CompareInfoPortableExtensions.cs" />
+    <Compile Include="Globalization\SortKey.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\Cryptography\Adaptation\ICryptographyFactory.cs" />
     <Compile Include="Security\Cryptography\Adaptation\IDeriveBytes.cs" />
