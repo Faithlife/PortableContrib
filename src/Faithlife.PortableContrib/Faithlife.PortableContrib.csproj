@@ -89,6 +89,7 @@
     <Compile Include="Security\Cryptography\SHA256Managed.cs" />
     <Compile Include="Security\Cryptography\SymmetricAlgorithm.cs" />
     <Compile Include="SerializableAttribute.cs" />
+    <Compile Include="Threading\ExecutionContext.cs" />
     <Compile Include="Threading\Thread.cs" />
     <Compile Include="Threading\Timer.cs" />
   </ItemGroup>
