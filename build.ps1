@@ -13,6 +13,8 @@ Task Default -depends NuGetPack, NuGetPublish
 Task Clean {
   Get-ChildItem "src\*\bin" | Remove-Item -force -recurse -ErrorAction Stop
   Get-ChildItem "src\*\obj" | Remove-Item -force -recurse -ErrorAction Stop
+  Get-ChildItem "tests\*\bin" | Remove-Item -force -recurse -ErrorAction Stop
+  Get-ChildItem "tests\*\obj" | Remove-Item -force -recurse -ErrorAction Stop
   if (Test-Path $outputDir) {
     Remove-Item $outputDir -force -recurse -ErrorAction Stop
   }
@@ -23,7 +25,14 @@ Task Build -depends Clean {
   Exec { msbuild /m:4 /p:Configuration=$configuration /p:Platform="Any CPU" /p:VisualStudioVersion=12.0 PortableContrib.sln }
 }
 
-Task SourceIndex -depends Build {
+Task Test -depends Build {
+  md "build\tests"
+  Copy "tests\Faithlife.PortableContrib.Tests\bin\$configuration\*.dll" "build\tests"
+  Copy "src\Faithlife.PortableContrib\bin\Net45\$configuration\Faithlife.PortableContrib.dll" "build\tests"
+  Exec { packages\xunit.runner.console.2.0.0\tools\xunit.console.exe "build\tests\Faithlife.PortableContrib.Tests.dll" -xml "build\testresults.xml" }
+}
+
+Task SourceIndex -depends Test {
   $headSha = & $gitPath rev-parse HEAD
   foreach ($framework in @("Portable", "Net45", "MonoAndroid", "Xamarin.iOS")) {
     Exec { tools\SourceIndex\github-sourceindexer.ps1 -symbolsFolder src\Faithlife.PortableContrib\bin\$framework\$configuration -userId Faithlife -repository PortableContrib -branch $headSha -sourcesRoot ${pwd} -dbgToolsPath "C:\Program Files (x86)\Windows Kits\8.1\Debuggers\x86" -gitHubUrl "https://raw.github.com" -serverIsRaw -ignoreUnknown -verbose }

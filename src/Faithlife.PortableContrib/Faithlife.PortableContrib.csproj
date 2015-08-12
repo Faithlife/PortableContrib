@@ -69,13 +69,13 @@
     <Compile Include="Data\StateChangeEventArgs.cs" />
     <Compile Include="Data\UpdateRowSource.cs" />
     <Compile Include="DBNull.cs" />
+    <Compile Include="Globalization\CompareInfoPortableExtensions.cs" />
+    <Compile Include="Globalization\SortKey.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\Cryptography\Adaptation\ICryptographyFactory.cs" />
     <Compile Include="Security\Cryptography\Adaptation\IDeriveBytes.cs" />
     <Compile Include="Security\Cryptography\Adaptation\IHashAlgorithm.cs" />
     <Compile Include="Security\Cryptography\Adaptation\IKeyedHashAlgorithm.cs" />
-    <Compile Include="Security\Cryptography\Adaptation\IProtectedData.cs" />
-    <Compile Include="Security\Cryptography\Adaptation\IProtectedDataFactory.cs" />
     <Compile Include="Security\Cryptography\Adaptation\ISymmetricAlgorithm.cs" />
     <Compile Include="Security\Cryptography\AesManaged.cs" />
     <Compile Include="Security\Cryptography\CryptographicException.cs" />
@@ -86,12 +86,14 @@
     <Compile Include="Security\Cryptography\ICryptoTransform.cs" />
     <Compile Include="Security\Cryptography\KeyedHashAlgorithm.cs" />
     <Compile Include="Security\Cryptography\MD5.cs" />
-    <Compile Include="Security\Cryptography\ProtectedData.cs" />
     <Compile Include="Security\Cryptography\Rfc2898DeriveBytes.cs" />
     <Compile Include="Security\Cryptography\SHA1.cs" />
     <Compile Include="Security\Cryptography\SHA256Managed.cs" />
     <Compile Include="Security\Cryptography\SymmetricAlgorithm.cs" />
     <Compile Include="SerializableAttribute.cs" />
+    <Compile Include="Threading\ExecutionContext.cs" />
+    <Compile Include="Threading\Thread.cs" />
+    <Compile Include="Threading\Timer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
