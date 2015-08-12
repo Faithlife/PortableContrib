@@ -29,7 +29,7 @@ Task Test -depends Build {
   md "build\tests"
   Copy "tests\Faithlife.PortableContrib.Tests\bin\$configuration\*.dll" "build\tests"
   Copy "src\Faithlife.PortableContrib\bin\Net45\$configuration\Faithlife.PortableContrib.dll" "build\tests"
-  Exec { packages\xunit.runner.console.2.0.0\tools\xunit.console.exe "build\tests\Faithlife.PortableContrib.Tests.dll" }
+  Exec { packages\xunit.runner.console.2.0.0\tools\xunit.console.exe "build\tests\Faithlife.PortableContrib.Tests.dll" -xml "build\testresults.xml" }
 }
 
 Task SourceIndex -depends Test {
