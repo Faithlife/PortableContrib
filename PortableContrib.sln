@@ -18,6 +18,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faithlife.PortableContrib.Tests", "tests\Faithlife.PortableContrib.Tests\Faithlife.PortableContrib.Tests.csproj", "{29774967-3716-4DF5-81F6-F3EB9F650400}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C44A8873-49CD-408F-A4B6-04723B1A6F2E}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +47,10 @@ Global
 		{E021D1A0-1C7B-4FD7-A645-E27BD8DEB7DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E021D1A0-1C7B-4FD7-A645-E27BD8DEB7DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E021D1A0-1C7B-4FD7-A645-E27BD8DEB7DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29774967-3716-4DF5-81F6-F3EB9F650400}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29774967-3716-4DF5-81F6-F3EB9F650400}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29774967-3716-4DF5-81F6-F3EB9F650400}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29774967-3716-4DF5-81F6-F3EB9F650400}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

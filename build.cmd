@@ -1,1 +1,1 @@
-tools\psake\psake.cmd build.ps1 
+tools\psake\psake.cmd build.ps1 %*
