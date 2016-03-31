@@ -1,4 +1,5 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.Globalization;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
 namespace System.Threading
@@ -7,6 +8,11 @@ namespace System.Threading
 	/// Represents the method that executes on a <see cref="Thread"/>.
 	/// </summary>
 	public delegate void ThreadStart();
+
+	/// <summary>
+	/// Represents the parameterized method that executes on a <see cref="Thread"/>.
+	/// </summary>
+	public delegate void ParameterizedThreadStart(object obj);
 
 	/// <summary>
 	/// Thread abstraction using a long running task to simulate a System.Threading.Thread
@@ -23,6 +29,15 @@ namespace System.Threading
 		}
 
 		/// <summary>
+		/// Initializes a new instance of the <see cref="Thread" /> class.
+		/// </summary>
+		/// <param name="start">The thread proc.</param>
+		public Thread(ParameterizedThreadStart start)
+		{
+			m_start = start;
+		}
+
+		/// <summary>
 		/// Gets or sets the name.
 		/// </summary>
 		/// <value>
@@ -31,11 +46,25 @@ namespace System.Threading
 		public string Name { get; set; }
 
 		/// <summary>
-		/// Starts the thread by running the specified thread proc.
+		/// Starts the thread by running the specified <see cref="ThreadStart" /> proc.
 		/// </summary>
 		public void Start()
 		{
-			m_task = Task.Factory.StartNew(new Action(m_start), TaskCreationOptions.LongRunning);
+			if (!(m_start is ThreadStart))
+				throw new InvalidOperationException("The thread was not created with a ThreadStart delegate.");
+
+			m_task = Task.Factory.StartNew(new Action((ThreadStart)m_start), TaskCreationOptions.LongRunning);
+		}
+
+		/// <summary>
+		/// Starts the thread by running the specified <see cref="ParameterizedThreadStart" /> proc.
+		/// </summary>
+		public void Start(object parameter)
+		{
+			if (!(m_start is ParameterizedThreadStart))
+				throw new InvalidOperationException("The thread was not created with a ParameterizedThreadStart delegate.");
+
+			m_task = Task.Factory.StartNew(new Action<object>((ParameterizedThreadStart) m_start), parameter, TaskCreationOptions.LongRunning);
 		}
 
 		/// <summary>
@@ -77,7 +106,44 @@ namespace System.Threading
 			}
 		}
 
-		readonly ThreadStart m_start;
+		public static Thread CurrentThread
+		{
+			get { throw new NotImplementedException(); }
+		}
+
+		public int ManagedThreadId
+		{
+			get { throw new NotImplementedException(); }
+		}
+
+		/// <summary>
+		/// Provided for compatibility, but has no effect.
+		/// </summary>
+		public CultureInfo CurrentCulture
+		{
+			get { return CultureInfo.CurrentCulture; }
+			set { throw new NotImplementedException(); }
+		}
+
+		/// <summary>
+		/// Provided for compatibility, but has no effect.
+		/// </summary>
+		public ThreadPriority Priority
+		{
+			get { return ThreadPriority.Normal; }
+			set { throw new NotImplementedException(); }
+		}
+
+		/// <summary>
+		/// Provided for compatibility, but has no effect.
+		/// </summary>
+		public CultureInfo CurrentUICulture
+		{
+			get { return CultureInfo.CurrentUICulture; }
+			set { throw new NotImplementedException(); }
+		}
+
+		readonly Delegate m_start;
 		Task m_task;
 	}
 }
