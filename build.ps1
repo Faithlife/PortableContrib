@@ -42,7 +42,7 @@ Task SourceIndex -depends Test {
 Task NuGetPack -depends SourceIndex {
   mkdir $outputDir -force
   $script:version = [System.Diagnostics.FileVersionInfo]::GetVersionInfo("src\Faithlife.PortableContrib\bin\Portable\$configuration\Faithlife.PortableContrib.dll").FileVersion
-  Exec { tools\NuGet\NuGet pack Faithlife.PortableContrib.nuspec -Version $script:version -Prop Configuration=$configuration -Symbols -OutputDirectory $outputDir }
+  Exec { tools\NuGet\NuGet pack Faithlife.PortableContrib.nuspec -Version $script:version -Prop Configuration=$configuration -OutputDirectory $outputDir }
 }
 
 Task NuGetPublish -depends NuGetPack -precondition { return $apiKey -and $nugetPackageSource } {
