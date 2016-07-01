@@ -48,6 +48,7 @@
 [assembly: TypeForwardedTo(typeof(System.Security.Cryptography.SHA1))]
 [assembly: TypeForwardedTo(typeof(System.Security.Cryptography.SHA256Managed))]
 [assembly: TypeForwardedTo(typeof(System.Security.Cryptography.SymmetricAlgorithm))]
+[assembly: TypeForwardedTo(typeof(System.Text.NormalizationForm))]
 [assembly: TypeForwardedTo(typeof(System.Threading.ContextCallback))]
 [assembly: TypeForwardedTo(typeof(System.Threading.ExecutionContext))]
 [assembly: TypeForwardedTo(typeof(System.Threading.ParameterizedThreadStart))]
