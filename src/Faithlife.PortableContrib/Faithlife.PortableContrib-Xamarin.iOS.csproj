@@ -39,6 +39,7 @@
   <ItemGroup>
     <Compile Include="Globalization\CompareInfoPortableExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringPortableExtensions.cs" />
     <Compile Include="TypesForwarded.cs" />
   </ItemGroup>
   <ItemGroup>
