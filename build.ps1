@@ -45,6 +45,7 @@ Task SourceIndex -depends Test {
 Task NuGetPack -depends SourceIndex {
   mkdir $outputDir -force
   $script:version = [System.Diagnostics.FileVersionInfo]::GetVersionInfo("src\Faithlife.PortableContrib\bin\$configuration\Portable\Faithlife.PortableContrib.dll").FileVersion
+  $script:version = $script:version.Substring(0, $script:version.LastIndexOf('.'))
   Exec { tools\NuGet\NuGet pack Faithlife.PortableContrib.nuspec -Version $script:version -Prop Configuration=$configuration -OutputDirectory $outputDir }
 }
 
