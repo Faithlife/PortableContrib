@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Company>Faithlife Corporation</Company>
     <Copyright>Copyright 2018 Faithlife Corporation</Copyright>
-    <VersionPrefix>2.2.0</VersionPrefix>
+    <VersionPrefix>2.2.1</VersionPrefix>
     <PackageLicenseUrl>https://github.com/raw/Faithlife/PortableContrib/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/Faithlife/PortableContrib</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Faithlife/PortableContrib.git</RepositoryUrl>
