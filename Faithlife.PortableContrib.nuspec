@@ -16,5 +16,6 @@
     <file src="src\Faithlife.PortableContrib\bin\$configuration$\Net45\Faithlife.PortableContrib.*" target="lib\net45\" />
     <file src="src\Faithlife.PortableContrib\bin\$configuration$\MonoAndroid\Faithlife.PortableContrib.*" target="lib\monoandroid\" exclude="**\*.mdb" />
     <file src="src\Faithlife.PortableContrib\bin\$configuration$\Xamarin.iOS\Faithlife.PortableContrib.*" target="lib\xamarinios\" exclude="**\*.mdb" />
+    <file src="src\Faithlife.PortableContrib\bin\$configuration$\netstandard2.0\Faithlife.PortableContrib.*" target="lib\netstandard2.0\" />
   </files>
 </package>
