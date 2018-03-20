@@ -28,20 +28,20 @@ Task Build -depends Clean {
 Task Test -depends Build {
   md "build\tests"
   Copy "tests\Faithlife.PortableContrib.Tests\bin\$configuration\*.dll" "build\tests"
-  Copy "src\Faithlife.PortableContrib\bin\Net45\$configuration\Faithlife.PortableContrib.dll" "build\tests"
+  Copy "src\Faithlife.PortableContrib\bin\$configuration\Net45\Faithlife.PortableContrib.dll" "build\tests"
   Exec { packages\xunit.runner.console.2.0.0\tools\xunit.console.exe "build\tests\Faithlife.PortableContrib.Tests.dll" -xml "build\testresults.xml" }
 }
 
 Task SourceIndex -depends Test {
   $headSha = & $gitPath rev-parse HEAD
   foreach ($framework in @("Portable", "Net45", "MonoAndroid", "Xamarin.iOS")) {
-    Exec { tools\SourceIndex\github-sourceindexer.ps1 -symbolsFolder src\Faithlife.PortableContrib\bin\$framework\$configuration -userId Faithlife -repository PortableContrib -branch $headSha -sourcesRoot ${pwd} -dbgToolsPath "C:\Program Files (x86)\Windows Kits\8.1\Debuggers\x86" -gitHubUrl "https://raw.github.com" -serverIsRaw -ignoreUnknown -verbose }
+    Exec { tools\SourceIndex\github-sourceindexer.ps1 -symbolsFolder src\Faithlife.PortableContrib\bin\$configuration\$framework -userId Faithlife -repository PortableContrib -branch $headSha -sourcesRoot ${pwd} -dbgToolsPath "C:\Program Files (x86)\Windows Kits\8.1\Debuggers\x86" -gitHubUrl "https://raw.github.com" -serverIsRaw -ignoreUnknown -verbose }
   }
 }
 
 Task NuGetPack -depends SourceIndex {
   mkdir $outputDir -force
-  $script:version = [System.Diagnostics.FileVersionInfo]::GetVersionInfo("src\Faithlife.PortableContrib\bin\Portable\$configuration\Faithlife.PortableContrib.dll").FileVersion
+  $script:version = [System.Diagnostics.FileVersionInfo]::GetVersionInfo("src\Faithlife.PortableContrib\bin\$configuration\Portable\Faithlife.PortableContrib.dll").FileVersion
   Exec { tools\NuGet\NuGet pack Faithlife.PortableContrib.nuspec -Version $script:version -Prop Configuration=$configuration -OutputDirectory $outputDir }
 }
 

@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Xamarin.iOS\Debug\</OutputPath>
+    <OutputPath>bin\Debug\Xamarin.iOS\</OutputPath>
     <BaseIntermediateOutputPath>obj\Xamarin.iOS\</BaseIntermediateOutputPath>
     <DefineConstants>DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -28,7 +28,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Xamarin.iOS\Release\</OutputPath>
+    <OutputPath>bin\Release\Xamarin.iOS\</OutputPath>
     <BaseIntermediateOutputPath>obj\Xamarin.iOS\</BaseIntermediateOutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>

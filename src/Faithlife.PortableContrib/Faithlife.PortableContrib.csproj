@@ -20,7 +20,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Portable\Debug\</OutputPath>
+    <OutputPath>bin\Debug\Portable\</OutputPath>
     <BaseIntermediateOutputPath>obj\Portable\</BaseIntermediateOutputPath>
     <DefineConstants>TRACE;DEBUG;PORTABLE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -29,7 +29,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Portable\Release\</OutputPath>
+    <OutputPath>bin\Release\Portable\</OutputPath>
     <BaseIntermediateOutputPath>obj\Portable\</BaseIntermediateOutputPath>
     <DefineConstants>TRACE;PORTABLE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
