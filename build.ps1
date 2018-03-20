@@ -1,6 +1,6 @@
 properties {
   $configuration = "Release"
-  $gitPath = "C:\Program Files (x86)\Git\bin\git.exe"
+  $gitPath = "C:\Program Files\Git\bin\git.exe"
   $outputDir = "build"
   $apiKey = $null
   $nugetPackageSource = $null
