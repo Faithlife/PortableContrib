@@ -21,8 +21,11 @@ Task Clean {
 }
 
 Task Build -depends Clean {
-  Exec { tools\NuGet\NuGet restore }
-  Exec { msbuild /m:4 /p:Configuration=$configuration /p:Platform="Any CPU" /p:VisualStudioVersion=12.0 PortableContrib.sln }
+  $env:path = "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\;$env:path"
+  $env:path = "C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\MSBuild\15.0\Bin\;$env:path"
+  Exec { tools\NuGet\NuGet.exe restore }
+  Exec { msbuild /t:Restore }
+  Exec { msbuild /m:4 /p:Configuration=$configuration /p:Platform="Any CPU" PortableContrib.sln }
 }
 
 Task Test -depends Build {
