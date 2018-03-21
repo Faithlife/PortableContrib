@@ -21,7 +21,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\MonoAndroid\Debug\</OutputPath>
+    <OutputPath>bin\Debug\MonoAndroid\</OutputPath>
     <BaseIntermediateOutputPath>obj\MonoAndroid\</BaseIntermediateOutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -30,7 +30,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\MonoAndroid\Release\</OutputPath>
+    <OutputPath>bin\Release\MonoAndroid\</OutputPath>
     <BaseIntermediateOutputPath>obj\MonoAndroid\</BaseIntermediateOutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>

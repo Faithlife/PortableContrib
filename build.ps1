@@ -1,6 +1,6 @@
 properties {
   $configuration = "Release"
-  $gitPath = "C:\Program Files (x86)\Git\bin\git.exe"
+  $gitPath = "C:\Program Files\Git\bin\git.exe"
   $outputDir = "build"
   $apiKey = $null
   $nugetPackageSource = $null
@@ -21,27 +21,31 @@ Task Clean {
 }
 
 Task Build -depends Clean {
-  Exec { tools\NuGet\NuGet restore }
-  Exec { msbuild /m:4 /p:Configuration=$configuration /p:Platform="Any CPU" /p:VisualStudioVersion=12.0 PortableContrib.sln }
+  $env:path = "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\;$env:path"
+  $env:path = "C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\MSBuild\15.0\Bin\;$env:path"
+  Exec { tools\NuGet\NuGet.exe restore }
+  Exec { msbuild /t:Restore }
+  Exec { msbuild /m:4 /p:Configuration=$configuration /p:Platform="Any CPU" PortableContrib.sln }
 }
 
 Task Test -depends Build {
   md "build\tests"
   Copy "tests\Faithlife.PortableContrib.Tests\bin\$configuration\*.dll" "build\tests"
-  Copy "src\Faithlife.PortableContrib\bin\Net45\$configuration\Faithlife.PortableContrib.dll" "build\tests"
+  Copy "src\Faithlife.PortableContrib\bin\$configuration\Net45\Faithlife.PortableContrib.dll" "build\tests"
   Exec { packages\xunit.runner.console.2.0.0\tools\xunit.console.exe "build\tests\Faithlife.PortableContrib.Tests.dll" -xml "build\testresults.xml" }
 }
 
 Task SourceIndex -depends Test {
   $headSha = & $gitPath rev-parse HEAD
   foreach ($framework in @("Portable", "Net45", "MonoAndroid", "Xamarin.iOS")) {
-    Exec { tools\SourceIndex\github-sourceindexer.ps1 -symbolsFolder src\Faithlife.PortableContrib\bin\$framework\$configuration -userId Faithlife -repository PortableContrib -branch $headSha -sourcesRoot ${pwd} -dbgToolsPath "C:\Program Files (x86)\Windows Kits\8.1\Debuggers\x86" -gitHubUrl "https://raw.github.com" -serverIsRaw -ignoreUnknown -verbose }
+    Exec { tools\SourceIndex\github-sourceindexer.ps1 -symbolsFolder src\Faithlife.PortableContrib\bin\$configuration\$framework -userId Faithlife -repository PortableContrib -branch $headSha -sourcesRoot ${pwd} -dbgToolsPath "C:\Program Files (x86)\Windows Kits\8.1\Debuggers\x86" -gitHubUrl "https://raw.github.com" -serverIsRaw -ignoreUnknown -verbose }
   }
 }
 
 Task NuGetPack -depends SourceIndex {
   mkdir $outputDir -force
-  $script:version = [System.Diagnostics.FileVersionInfo]::GetVersionInfo("src\Faithlife.PortableContrib\bin\Portable\$configuration\Faithlife.PortableContrib.dll").FileVersion
+  $script:version = [System.Diagnostics.FileVersionInfo]::GetVersionInfo("src\Faithlife.PortableContrib\bin\$configuration\Portable\Faithlife.PortableContrib.dll").FileVersion
+  $script:version = $script:version.Substring(0, $script:version.LastIndexOf('.'))
   Exec { tools\NuGet\NuGet pack Faithlife.PortableContrib.nuspec -Version $script:version -Prop Configuration=$configuration -OutputDirectory $outputDir }
 }
 

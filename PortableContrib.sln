@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2011
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faithlife.PortableContrib", "src\Faithlife.PortableContrib\Faithlife.PortableContrib.csproj", "{FBDBFD6F-34B3-422D-A92E-B05D55B75351}"
 EndProject
@@ -24,6 +24,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C44A88
 	ProjectSection(SolutionItems) = preProject
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Faithlife.PortableContrib-NetStandard2", "src\Faithlife.PortableContrib\Faithlife.PortableContrib-NetStandard2.csproj", "{401E0365-75C0-4D4C-A58A-1594136611A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,8 +53,15 @@ Global
 		{29774967-3716-4DF5-81F6-F3EB9F650400}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29774967-3716-4DF5-81F6-F3EB9F650400}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29774967-3716-4DF5-81F6-F3EB9F650400}.Release|Any CPU.Build.0 = Release|Any CPU
+		{401E0365-75C0-4D4C-A58A-1594136611A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{401E0365-75C0-4D4C-A58A-1594136611A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{401E0365-75C0-4D4C-A58A-1594136611A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{401E0365-75C0-4D4C-A58A-1594136611A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {77BF1A08-4B82-4515-BB95-772D0839BD08}
 	EndGlobalSection
 EndGlobal
